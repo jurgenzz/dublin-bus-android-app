@@ -36,6 +36,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 url: '/home',
                 views: {
                     'menuContent': {
+                        templateUrl: 'templates/faves.html',
+                        controller: 'favesCtrl'
+                    }
+                }
+
+            })
+            .state('app.search', {
+                url: '/search',
+                views: {
+                    'menuContent': {
                         templateUrl: 'templates/home.html',
                         controller: 'busCtrl'
                     }

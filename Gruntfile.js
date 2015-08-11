@@ -59,10 +59,10 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
-      bower: {
-        files: ['bower.json'],
-        tasks: ['wiredep', 'newer:copy:app']
-      },
+      //bower: {
+      //  files: ['bower.json'],
+      //  tasks: ['wiredep', 'newer:copy:app']
+      //},
       html: {
         files: ['<%= yeoman.app %>/**/*.html'],
         tasks: ['newer:copy:app']
