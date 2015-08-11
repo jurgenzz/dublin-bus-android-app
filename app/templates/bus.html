@@ -1,0 +1,40 @@
+<ion-view view-title="Dublin Bus">
+  <ion-content>
+<input type="submit" ng-click="changeBusBtn()" value="Change stop Nr" class="btn"/>
+
+<div ng-show="changeBus" class="SlideUp">
+  <form ng-submit="submit()">
+	<input type="text" ng-model="text" name="text"  class="bus-input"  onClick="this.select();"/>
+	<input type="submit" id="submit" value="Submit" class="btn"/>
+  </form>
+</div>
+
+<div class="head">
+  <ul>
+	<li>Bus no</li>
+	<li>Destination</li>
+	<li>Time Due</li>
+  </ul>
+</div>
+<div class="table">
+  <div class="loading" ng-show="loading" class="loading">Loading...<img src="http://jimpunk.net/Loading/wp-content/uploads/loading5.gif"></div>
+
+  <div class="clear"></div>
+  <div ng-show="busesRTPI.bus.length === 0" class="notification">
+	Hey, looks like either there are no buses, or you got the bus stop nr. wrong! Check again!
+	<input type="submit" ng-click="changeBusBtn()" value="Change stop Nr" class="btn"/>
+  </div>
+  <div ng-repeat="bus in busesRTPI.bus">
+
+	<ul class="busTable">
+	  <li>{{bus.busNo}} </li>
+	  <li>{{bus.destination}}</li>
+	  <li>{{bus.timeDue}}</li>
+	</ul>
+  </div>
+
+</div>
+<span class="little">RTPI Time = {{busesRTPI.timeNow}}, auto reload in {{timeOut}}</span>
+<a href="#/home" class="btn btn-a">Go back</a>
+	</ion-content>
+  </ion-view>
